@@ -1,0 +1,6 @@
+export const ADD_ITEM = 'ADD_ITEM';
+export const ADD_COLUMN = 'ADD_COLUMN';
+export const CHANGE_VISIBILITY = 'CHANGE_VISIBILITY';
+export const DELETE_ITEM = 'DELETE_ITEM';
+export const CANCEL_CHANGE = 'CANCEL_CHANGE';
+export const SAVE_CHANGED_ITEM = 'SAVE_CHANGED_ITEM';

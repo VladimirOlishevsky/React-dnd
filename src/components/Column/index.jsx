@@ -1,0 +1,67 @@
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Droppable } from 'react-beautiful-dnd';
+
+import Task from '../Task/index';
+
+import {
+    Container,
+    Title,
+    TaskList,
+    AddNewTask,
+    AddNewTaskLink,
+    AddNewTaskInput,
+    AddNewTaskButton
+} from './styles';
+
+import { addItem } from '../../actions/actionCreators';
+
+const Column = ({ column }) => {
+
+    const [item, setItem] = useState('')
+
+    const dispatch = useDispatch();
+
+    const addNewItem = () => {
+        console.log(column.id)
+        dispatch(addItem(column.id, item));
+        setItem('')
+    }
+    return (
+        <Container>
+            <Title>{column.title}</Title>
+
+            <Droppable droppableId={column.id}>
+                {(provided, snapshot) => (
+                    <TaskList
+                        ref={provided.innerRef}
+                        {...provided.droppableProps}
+                        isDraggingOver={snapshot.isDraggingOver}
+                    >
+                        {column.tasks.map((task, index) => (
+                            <Task key={task.id} task={task} index={index} columnId={column.id}></Task>
+                        ))}
+                        {provided.placeholder}
+                    </TaskList>
+                )}
+
+            </Droppable>
+            <AddNewTaskLink>Add New Item</AddNewTaskLink>
+            <AddNewTask >
+                <AddNewTaskInput
+                    value={item}
+                    onChange={(e) => setItem(e.target.value)}
+                >
+                </AddNewTaskInput>
+                <AddNewTaskButton
+                    onClick={addNewItem}
+                >
+                    add
+                </AddNewTaskButton>
+            </AddNewTask>
+
+        </Container>
+    )
+}
+
+export default Column
