@@ -1,12 +1,6 @@
 import styled from 'styled-components'
 
 export const ChangeContainer = styled.div `
-    // display: flex!important;
-    // flex-direction: column!important;
-    // flex-wrap: nowrap!important;
-    // width: 30%;
-
-    
     text-align: center;
     position: absolute;
     left: ${props => props.inputVisibility ? '50%' : '-50%'};
@@ -14,28 +8,31 @@ export const ChangeContainer = styled.div `
     top: 25%;
     transform: translate(-50%, -50%);
     width: 300px;
-    height: 100px;
+    height: 130px;
     border: 1px solid rebeccapurple;
     border-radius: 30px;
     padding: 20px;
     background-color: #fff;
 `
 
-export const FormChange = styled.label `
-
+export const ChangeContainerTitle = styled.p `
+    font-size: 20px;
 `
 
 export const InputChange = styled.input `
     border: none!important;
-    border-bottom: solid 1px rgba(38, 44, 49, 0.1)!important;
+    border-bottom: solid 1px rgba(38, 44, 49, 0.1) !important;
     border-radius: 0!important;
-    background-color: transparent!important;
+    background-color: transparent !important;
     width: 80%!important;
     max-width: 100%!important;
     line-height: 1.5!important;
-    background: rgba(38,44,49,0.05)!important;
     margin-bottom: 20px;
     margin-top: 20px;
+    &:focus {
+        background: #ffe !important;
+        outline: none;
+    }
 `
 
 export const ChangeButtons = styled.div `

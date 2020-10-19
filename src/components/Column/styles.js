@@ -19,17 +19,17 @@ export const TaskList = styled.div `
 `
 
 export const AddNewTaskLink = styled.div `
-cursor: pointer;
-text-align: center;
-margin-bottom: 0;
-    line-height: 1.9;
-    font-weight: 400;
-    color: #323d47;
-    letter-spacing: 0.5px;
+  cursor: pointer;
+  text-align: center;
+  margin-bottom: 0;
+  line-height: 1.9;
+  font-weight: 400;
+  color: #323d47;
+  letter-spacing: 0.5px;
 `
 export const AddNewTask = styled.div `
-margin: 8px !important;
-position: relative;
+  margin: 8px !important;
+  position: relative;
   display: flex;
   flex-direction: row;
   max-width: 400px;
@@ -43,7 +43,6 @@ position: relative;
     left: 0px;
     right: 0px;
     bottom: 0px;
-    z-index: 999;
     height: 2px;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
@@ -54,7 +53,7 @@ position: relative;
   }
 `
 export const AddNewTaskInput = styled.input `
-flex-grow: 1;
+  flex-grow: 1;
   color: #7566a0;
   line-height: 2.4rem;
   vertical-align: middle;

@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { cancelChange, changeVisibility, saveChangedItem } from '../../actions/actionCreators';
 
-import { InputButtonCancel, InputButtonSave, InputChange, ChangeContainer, ChangeButtons } from './styles';
+import { InputButtonCancel, InputButtonSave, InputChange, ChangeContainer, ChangeButtons, ChangeContainerTitle } from './styles';
+import items from './utils'
+
+console.log(items);
 
 
 function InputItem() {
 
     const { inputVisibility, itemEditedValue, columnChangedId, itemChangedId } = useSelector(state => state.serviceReducer);
-
-    console.log(columnChangedId, itemChangedId)
 
     const [itemValue, setItemValue] = useState(itemEditedValue ? itemEditedValue : '');
 
@@ -30,25 +31,25 @@ function InputItem() {
     const saveChangeButton = () => {
         dispatch(saveChangedItem(columnChangedId, itemChangedId, itemValue));
         dispatch(changeVisibility(null, null, null, null))
-
     }
 
     return ( 
         <ChangeContainer inputVisibility={inputVisibility}>
+            <ChangeContainerTitle>
+                {items.changeItem}
+            </ChangeContainerTitle>
             <InputChange
                 value={sendValue(itemEditedValue, itemValue)}
                 onChange={handleChange}
             />
             <ChangeButtons>
                 <InputButtonSave onClick={saveChangeButton}>
-                ok
+                {items.ok}
                 </InputButtonSave>
                 <InputButtonCancel onClick={cancelChangeButton}>
-                cancel
+                {items.cancel}
                 </InputButtonCancel>
             </ChangeButtons>
-
-
         </ChangeContainer>
     )
 }

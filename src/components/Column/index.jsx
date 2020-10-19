@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Droppable } from 'react-beautiful-dnd';
-
 import Task from '../Task/index';
+
+import items from './utils'
 
 import {
     Container,
@@ -46,7 +47,7 @@ const Column = ({ column }) => {
                 )}
 
             </Droppable>
-            <AddNewTaskLink>Add New Item</AddNewTaskLink>
+            <AddNewTaskLink>{items.addNewItem}</AddNewTaskLink>
             <AddNewTask >
                 <AddNewTaskInput
                     value={item}
@@ -56,7 +57,7 @@ const Column = ({ column }) => {
                 <AddNewTaskButton
                     onClick={addNewItem}
                 >
-                    add
+                    {items.add}
                 </AddNewTaskButton>
             </AddNewTask>
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Draggable } from 'react-beautiful-dnd';
 import Icons from '../Icons';
-import ChangeContainer from '../InputItem';
 import { Container } from './styles'
 
 const Task = ({ task, index, columnId }) => {
