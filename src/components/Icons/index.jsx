@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import editIcon from '../../img/pencil.png';
 import deleteIcon from '../../img/garbage.png';
 
-
 import { ImageContainer, IconEdit, IconDelete } from './styles'
 import { changeVisibility, deleteItem } from '../../actions/actionCreators';
 

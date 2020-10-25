@@ -4,7 +4,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 
 import Column from './components/Column/index';
 import { Container } from './styles';
-import InputItem from './components/InputItem';
+import InputItem from './components/ChangeItemField';
 
 export default function App() {
 
@@ -34,8 +34,6 @@ export default function App() {
     sourceColumn.tasks.splice(source.index, 1)
     destinationColumn.tasks.splice(destination.index, 0, task)
   }
-
-  console.log(items)
   return (
     <>
       <DragDropContext onDragEnd={onDragEnd}>

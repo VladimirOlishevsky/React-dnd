@@ -5,9 +5,6 @@ import { cancelChange, changeVisibility, saveChangedItem } from '../../actions/a
 import { InputButtonCancel, InputButtonSave, InputChange, ChangeContainer, ChangeButtons, ChangeContainerTitle } from './styles';
 import items from './utils'
 
-console.log(items);
-
-
 function InputItem() {
 
     const { inputVisibility, itemEditedValue, columnChangedId, itemChangedId } = useSelector(state => state.serviceReducer);
