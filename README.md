@@ -8,8 +8,6 @@
 
 <img src="./readme_assets/react-dnd-gif.gif" width="100%">
 
-<h1 align="center"><a href="https://vladimirolishevsky.github.io/react-dnd/">Live Demo</a></h1>
-
 ## Description
 
 Simple React App with ```react-beautiful-dnd``` (<a href="https://github.com/atlassian/react-beautiful-dnd">view</a>), ```React Styled Components``` and ```Redux Thunk```

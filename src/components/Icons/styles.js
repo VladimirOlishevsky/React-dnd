@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const ImageContainer = styled.div `
   height: 0.8rem;
   margin-left: auto;

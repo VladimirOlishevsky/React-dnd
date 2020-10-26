@@ -7,7 +7,7 @@ import deleteIcon from '../../img/garbage.png';
 import { ImageContainer, IconEdit, IconDelete } from './styles'
 import { changeVisibility, deleteItem } from '../../actions/actionCreators';
 
-const Icons = ({value, columnId, taskId}) => {
+const Icons = ({ value, columnId, taskId }) => {
 
     const dispatch = useDispatch();
 

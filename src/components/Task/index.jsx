@@ -14,7 +14,7 @@ const Task = ({ task, index, columnId }) => {
           isDragging={snapshot.isDragging}
         >
           {task.content}
-          <Icons value={task.content} columnId={columnId} taskId={task.id}/>
+          <Icons value={task.content} columnId={columnId} taskId={task.id} />
         </Container>
       )}
     </Draggable>

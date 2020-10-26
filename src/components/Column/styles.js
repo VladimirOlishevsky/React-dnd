@@ -67,7 +67,7 @@ export const AddNewTaskInput = styled.input `
 
 
 export const AddNewTaskButton = styled.button `
-color:  #7881A1;
+  color:  #7881A1;
   font-size: 1rem;
   line-height: 2.4rem;
   vertical-align: middle;
