@@ -4,7 +4,7 @@ import { DragDropContext } from 'react-beautiful-dnd';
 
 import Column from './components/Column/index';
 import { Container } from './styles';
-import InputItem from './components/ChangeItemField';
+import ChangeItemField from './components/ChangeItemField';
 
 export default function App() {
 
@@ -17,8 +17,8 @@ export default function App() {
       return
     }
 
-    if (destination.droppableId === source.droppableId
-      && destination.index === source.index) {
+    if (destination.droppableId === source.droppableId &&
+      destination.index === source.index) {
       return
     }
 
@@ -36,14 +36,17 @@ export default function App() {
   }
   return (
     <>
-      <DragDropContext onDragEnd={onDragEnd}>
+      <DragDropContext onDragEnd={onDragEnd} >
         <Container>
-          {items.map(column => (
-            <Column column={column} key={column.id}></Column>
-          ))}
+          {
+            items.map(column => (<
+              Column column={column}
+              key={column.id}> </Column>
+            ))
+          }
         </Container>
       </DragDropContext>
-      <InputItem />
+      <ChangeItemField />
     </>
   )
 }

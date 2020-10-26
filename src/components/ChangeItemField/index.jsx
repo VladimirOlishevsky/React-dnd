@@ -5,7 +5,7 @@ import { cancelChange, changeVisibility, saveChangedItem } from '../../actions/a
 import { InputButtonCancel, InputButtonSave, InputChange, ChangeContainer, ChangeButtons, ChangeContainerTitle } from './styles';
 import items from './utils'
 
-function InputItem() {
+function ChangeItemField() {
 
     const { inputVisibility, itemEditedValue, columnChangedId, itemChangedId } = useSelector(state => state.serviceReducer);
 
@@ -19,6 +19,13 @@ function InputItem() {
         dispatch(changeVisibility(true, value, columnChangedId, itemChangedId))
     }
 
+    const changeItemKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            dispatch(saveChangedItem(columnChangedId, itemChangedId, itemValue));
+            dispatch(changeVisibility(null, null, null, null))
+        }
+    }
+
     const sendValue = (val, defaultValue) => val ? val : defaultValue;
 
     const cancelChangeButton = () => {
@@ -30,7 +37,7 @@ function InputItem() {
         dispatch(changeVisibility(null, null, null, null))
     }
 
-    return ( 
+    return (
         <ChangeContainer inputVisibility={inputVisibility}>
             <ChangeContainerTitle>
                 {items.changeItem}
@@ -38,13 +45,14 @@ function InputItem() {
             <InputChange
                 value={sendValue(itemEditedValue, itemValue)}
                 onChange={handleChange}
+                onKeyPress={changeItemKeyPress}
             />
             <ChangeButtons>
                 <InputButtonSave onClick={saveChangeButton}>
-                {items.ok}
+                    {items.ok}
                 </InputButtonSave>
                 <InputButtonCancel onClick={cancelChangeButton}>
-                {items.cancel}
+                    {items.cancel}
                 </InputButtonCancel>
             </ChangeButtons>
         </ChangeContainer>
@@ -52,5 +60,5 @@ function InputItem() {
 }
 
 
-export default InputItem
+export default ChangeItemField
 

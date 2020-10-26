@@ -24,9 +24,14 @@ const Column = ({ column }) => {
     const dispatch = useDispatch();
 
     const addNewItem = () => {
-        console.log(column.id)
         dispatch(addItem(column.id, item));
         setItem('')
+    }
+    const addNewItemKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            dispatch(addItem(column.id, item));
+            setItem('')
+        }
     }
     return (
         <Container>
@@ -52,6 +57,7 @@ const Column = ({ column }) => {
                 <AddNewTaskInput
                     value={item}
                     onChange={(e) => setItem(e.target.value)}
+                    onKeyPress={addNewItemKeyPress}
                 >
                 </AddNewTaskInput>
                 <AddNewTaskButton
